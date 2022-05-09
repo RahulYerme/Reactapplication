@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: my-nginx-react
+spec:
+  selector:
+    matchLabels:
+      run: my-nginx-react
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        run: my-nginx-react
+    spec:
+      containers:
+      - name: my-nginx-react
+        image: rahulyerme1234/nginxreact:1
+        ports:
+        - containerPort: 3000
+
+
+
+
+

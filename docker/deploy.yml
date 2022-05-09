@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: demo-javareact
+spec:
+  selector:
+    matchLabels:
+      run: demo-javareact
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        run: demo-javareact
+    spec:
+      containers:
+      - name: demo-javareact
+        image: rahulyerme1234/demotask:1
+        ports:
+        - containerPort: 80
+
+
+
+
+

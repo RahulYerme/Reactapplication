@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: app-javareact
+  labels:
+    run: app-javareact
+spec:
+  type: NodePort
+  ports:
+  - nodePort: 32410
+    protocol: TCP
+    port: 3000
+    targetPort: 3000
+  selector:
+    run: app-javareact
+
+

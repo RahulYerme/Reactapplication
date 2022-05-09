@@ -1,8 +1,18 @@
-# Alpine Linux with OpenJDK JRE
-FROM openjdk:8-jre-alpine
 
-# Copy war file
-COPY users-0.0.2-SNAPSHOT.jar /users.war
+FROM node:16.13
 
-# run the app
-CMD ["/usr/bin/java", "-jar", "/users.war"]
+WORKDIR /demoproject/react-java-docker/src/main/ui
+
+COPY package.json ./
+
+RUN npm install
+
+
+COPY . .
+
+
+EXPOSE 3000
+
+
+CMD ["npm", "start"]
+

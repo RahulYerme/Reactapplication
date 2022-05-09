@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: app-javareact
+spec:
+  selector:
+    matchLabels:
+      run: app-javareact
+  template:
+    metadata:
+      labels:
+        run: app-javareact
+    spec:
+      containers:
+      - name: app-javareact
+        image: rahulyerme1234/reactapplication:1
+        ports:
+        - containerPort: 3000
+
+
+
+
+
